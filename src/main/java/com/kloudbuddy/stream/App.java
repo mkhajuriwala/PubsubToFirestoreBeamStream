@@ -20,7 +20,9 @@ public class App {
                 .apply(ParDo.of(new DoFn<String, Document>() {
                     @ProcessElement
                     public void processElement(ProcessContext processContext) {
-                        processContext.output(Document.newBuilder().setName("projects/mkloud/databases/(default)/documents/stream/"+processContext.element())
+                        processContext.output(Document.newBuilder().setName(processContext.getPipelineOptions().as(RuntimeOptions.class).getFirestoreProject()
+                                        +"databases/(default)/"+processContext.getPipelineOptions().as(RuntimeOptions.class).getFirestoreCollection()
+                                        +processContext.element())
                                 .build());
                     }
                 }))
