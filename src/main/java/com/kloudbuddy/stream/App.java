@@ -33,6 +33,6 @@ public class App {
                     }
                 }))
                 .apply("Write to Firestore", FirestoreIO.v1().write().batchWrite().build());
-        pipeline.run().waitUntilFinish();
+        pipeline.run();
     }
 }

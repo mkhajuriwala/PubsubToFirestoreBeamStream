@@ -1,0 +1,21 @@
+{
+  "name": "Pubsub to Firestore",
+  "description": "An Apache Beam streaming pipeline that reads messages from Pub/Sub, uses Beam SQL to transform the message data, and writes the results to firestore",
+  "parameters": [
+    {
+      "name": "inputTopicSubscription",
+      "label": "Pub/Sub input subscription.",
+      "helpText": "Pub/Sub subscription to read from."
+    },
+    {
+      "name": "firestoreProject",
+      "label": "Firestore project id",
+      "helpText": "Firestore project id used while constructing the document path"
+    },
+    {
+      "name": "firestoreCollection",
+      "label": "Firestore collection name",
+      "helpText": "Firestore collection name used while constructing the document path"
+    }
+  ]
+}
